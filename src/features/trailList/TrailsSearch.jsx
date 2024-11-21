@@ -29,9 +29,7 @@ function TrailsSearch() {
   const [sortOrder, setSortOrder] = useState("desc"); // 預設降序
   console.log("isLoading", isLoading);
   useEffect(() => {
-    if (trails.length === 0) {
-      // dispatch(fetchTrails());
-    } else {
+    if (trails.length !== 0) {
       trails.forEach((trail) => {
         // 確保 TR_ENTRANCE 存在
         try {

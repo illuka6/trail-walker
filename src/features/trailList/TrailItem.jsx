@@ -7,7 +7,8 @@ import {
   hideForecast,
 } from "../../ui/uiSlice";
 import DeleteItem from "../favList/DeleteItem";
-import { addItem } from "../favList/favTrailSlice";
+import { addItem, deleteItem } from "../favList/favTrailSlice";
+import { useState } from "react";
 
 function TrailItem({ trail }) {
   const dispatch = useDispatch();
@@ -19,15 +20,31 @@ function TrailItem({ trail }) {
   const isForecastWeatherVisible = useSelector(
     (state) => state.ui.isForecastWeatherVisible,
   );
+
+  // const getIsInFavList = (id) =>
+  //   useSelector(
+  //     (state) =>
+  //       (state.favTrail.favTrails &&
+  //         state.favTrail.favTrails?.some((item) => item.TRAILID) === id) ||
+  //       false,
+  //   );
+  const isInFavList = useSelector(
+    (state) =>
+      state.favTrail?.favTrails?.some(
+        (favTrail) => favTrail.TRAILID === trail.TRAILID,
+      ) || false,
+  );
+  const [isShowMemo, setIsShowMemo] = useState(false);
+  const [isShowForecast, setIsShowForecast] = useState(false);
   function handleAddFavList() {
     if (!isAuthenticated) {
       dispatch(showLoginModule());
     } else {
-      alert("收藏成功！");
       const newTrail = {
         TRAILID: trail.TRAILID,
       };
       dispatch(addItem(newTrail));
+      alert("收藏成功！");
     }
   }
   function handleForecastWeather() {
@@ -36,6 +53,10 @@ function TrailItem({ trail }) {
     } else {
       dispatch(showForecast());
     }
+  }
+  function handleDeleteFavList() {
+    dispatch(deleteItem(trail.TRAILID));
+    alert("取消收藏！");
   }
 
   return (
@@ -60,9 +81,15 @@ function TrailItem({ trail }) {
         </div>
       </div>
 
-      <Button type="primary" onClick={() => handleAddFavList()}>
-        加入收藏
-      </Button>
+      {isInFavList ? (
+        <Button type="primary" onClick={() => handleDeleteFavList()}>
+          取消收藏
+        </Button>
+      ) : (
+        <Button type="primary" onClick={() => handleAddFavList()}>
+          加入收藏
+        </Button>
+      )}
 
       <Button type="primary" onClick={() => handleForecastWeather()}>
         查詢未來五日天氣
@@ -89,7 +116,15 @@ function TrailItem({ trail }) {
         ""
       )}
 
-      {isAuthenticated ? <DeleteItem trailId={trail.TRAILID} /> : ""}
+      {isAuthenticated ? (
+        <Button onClick={() => setIsShowMemo(!isShowMemo)} type="small">
+          {" "}
+          備註{" "}
+        </Button>
+      ) : (
+        ""
+      )}
+      {isShowMemo ? <div>備註欄位</div> : ""}
     </div>
   );
 }
