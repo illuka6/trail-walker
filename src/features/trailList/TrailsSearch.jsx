@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchTrails, setSearchName, setSearchPosition } from "./trailSlice";
+import { setSearchName, setSearchPosition } from "./trailSlice";
 import Button from "../../ui/Button";
 import LoginModule from "../../ui/LoginModule";
 import { showLoginModule, hideLoginModule } from "../../ui/uiSlice";
 import TrailItem from "./TrailItem";
 import { fetchWeather, fetchWeatherForecast } from "../../services/apiWeather";
 import { convertTWD97ToWGS84 } from "../../utils/helpers";
+import { getTrail } from "../../services/apiTrail";
+import { useLoaderData } from "react-router-dom";
 
 function TrailsSearch() {
   const dispatch = useDispatch();
@@ -16,7 +18,8 @@ function TrailsSearch() {
   const isLoading = useSelector((state) => state.trail.status == "loading");
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
 
-  const trails = useSelector((state) => state.trail.trails);
+  // const trails = useSelector((state) => state.trail.trails);
+  const trails = useLoaderData();
   const { weatherData, weatherForecastData } = useSelector(
     (state) => state.trail,
   );
@@ -27,7 +30,7 @@ function TrailsSearch() {
   console.log("isLoading", isLoading);
   useEffect(() => {
     if (trails.length === 0) {
-      dispatch(fetchTrails());
+      // dispatch(fetchTrails());
     } else {
       trails.forEach((trail) => {
         // 確保 TR_ENTRANCE 存在
@@ -182,3 +185,8 @@ function TrailsSearch() {
 }
 
 export default TrailsSearch;
+
+export async function loader() {
+  const trails = await getTrail();
+  return trails;
+}

@@ -1,14 +1,12 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { fetchWeather, fetchWeatherForecast } from "../../services/apiWeather";
-const TRAIL_API_URL =
-  "https://data.moa.gov.tw/Service/OpenData/ForestRtBasic.aspx?IsTransData=1&UnitId=D51";
 
 // 異步獲取資料
-export const fetchTrails = createAsyncThunk("trail/fetchTrails", async () => {
-  const response = await fetch(TRAIL_API_URL);
-  const data = await response.json();
-  return data;
-});
+// export const fetchTrails = createAsyncThunk("trail/fetchTrails", async () => {
+//   const response = await fetch(TRAIL_API_URL);
+//   const data = await response.json();
+//   return data;
+// });
 
 const initialState = {
   trails: [], // 全部步道資料
@@ -34,9 +32,9 @@ const trailSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchTrails.fulfilled, (state, action) => {
-        state.trails = action.payload;
-      })
+      // .addCase(fetchTrails.fulfilled, (state, action) => {
+      //   state.trails = action.payload;
+      // })
       .addCase(fetchWeather.pending, (state, action) => {
         state.status = "loading";
       })

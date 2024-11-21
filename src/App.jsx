@@ -3,6 +3,7 @@ import Home from "./ui/Home";
 // import TrailList, {
 //   loader as trailsLoader,
 // } from "./features/trailList/TrailList_v0";
+import { loader as trailsLoader } from "./features/trailList/TrailsSearch";
 import AppLayout from "./ui/AppLayout";
 import Error from "./ui/Error";
 import Login from "./features/user/Login";
@@ -23,7 +24,7 @@ function App() {
         {
           path: "/trails",
           element: <TrailsSearch />,
-          // loader: trailsLoader,
+          loader: trailsLoader,
           errorElement: <Error />,
         },
         {

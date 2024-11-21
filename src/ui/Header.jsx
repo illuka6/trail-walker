@@ -31,7 +31,7 @@ function Header() {
         </Link>
         {isAuthenticated ? (
           <>
-            <p>Hi,{user}</p>
+            <p>Hi,{user.name}</p>
             <Button type="small" onClick={() => dispatch(logout())}>
               登出
             </Button>

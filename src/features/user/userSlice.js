@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const FAKE_USER = {
+  userId: 1,
   name: "Jack",
   email: "jack@example.com",
   password: "qwerty",
@@ -29,7 +30,8 @@ const userSlice = createSlice({
           action.payload.password === FAKE_USER.password
         ) {
           state.isAuthenticated = true;
-          state.user = action.payload.email;
+          // state.user = action.payload.email;
+          state.user = FAKE_USER;
         }
       },
     },
