@@ -9,6 +9,14 @@ function Header() {
   const dispatch = useDispatch();
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
   const user = useSelector((state) => state.user.user);
+  console.log("import.meta.env", import.meta.env);
+  // const apiKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
+  // console.log("API Key: ", apiKey);
+  // const WEATHER_FORECAST_API_URL =
+  //   "https://api.openweathermap.org/data/2.5/forecast";
+  // const api_url = `${WEATHER_FORECAST_API_URL}?lat={lat}&lon={lon}&appid=${apiKey}&units=metric&lang=zh_tw`;
+  // console.log("api_url", api_url);
+
   return (
     <header className="z-999 absolute flex w-screen items-center justify-between bg-stone-200 bg-opacity-80 px-4 py-3 uppercase text-stone-600 sm:px-6 md:bg-opacity-0">
       <Link to="/" className="tracking-widest">
