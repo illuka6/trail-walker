@@ -16,7 +16,9 @@ function Header() {
   //   "https://api.openweathermap.org/data/2.5/forecast";
   // const api_url = `${WEATHER_FORECAST_API_URL}?lat={lat}&lon={lon}&appid=${apiKey}&units=metric&lang=zh_tw`;
   // console.log("api_url", api_url);
-
+  const isHaveFavList = useSelector(
+    (state) => state.favTrail.favTrails.length !== 0,
+  );
   return (
     <header className="z-999 absolute flex w-screen items-center justify-between bg-stone-200 bg-opacity-80 px-4 py-3 uppercase text-stone-600 sm:px-6 md:bg-opacity-0">
       <Link to="/" className="tracking-widest">
@@ -29,6 +31,7 @@ function Header() {
         <Link to="/about" className="mx-2">
           關於網站
         </Link>
+        {isHaveFavList ? <div>已收藏</div> : <div>未收藏</div>}
         {isAuthenticated ? (
           <>
             <p>Hi,{user.name}</p>

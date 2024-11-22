@@ -10,8 +10,11 @@ const WEATHER_FORECAST_API_URL =
 
 const WEATHER_API_URL = "https://api.openweathermap.org/data/2.5/weather";
 
-//https://api.openweathermap.org/data/2.5/weather?lat=24.018661761721184&lon=121.57659596623343&appid=ff5fcace7545789a0c64e858c89e6c0d&units=metric&lang=zh_cn
-//https://api.openweathermap.org/data/2.5/forecast?lat=24.018661761721184&lon=121.57659596623343&appid=ff5fcace7545789a0c64e858c89e6c0d&units=metric&lang=zh_cn
+//https://api.openweathermap.org/data/2.5/weather?lat=24.018661761721184&lon=121.57659596623343&appid=ff5fcace7545789a0c64e858c89e6c0d&units=metric&lang=zh_tw
+//https://api.openweathermap.org/data/2.5/forecast?lat=24.018661761721184&lon=121.57659596623343&appid=ff5fcace7545789a0c64e858c89e6c0d&units=metric&lang=zh_tw
+
+//https://openweathermap.org/weather-data
+
 export const fetchWeatherForecast = createAsyncThunk(
   "trail/fetchForeWeather",
   async ({ lat, lon, trailId }) => {

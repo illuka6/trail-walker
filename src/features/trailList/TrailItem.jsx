@@ -58,6 +58,9 @@ function TrailItem({ trail }) {
     dispatch(deleteItem(trail.TRAILID));
     alert("取消收藏！");
   }
+  function toPercentage(decimal) {
+    return (decimal * 100).toFixed(0) + "%";
+  }
 
   return (
     <div className="center m-auto my-1 max-w-screen-md rounded-md border-b bg-stone-50 bg-opacity-75 p-4">
@@ -68,17 +71,22 @@ function TrailItem({ trail }) {
           <p>位置: {trail.TR_POSITION}</p>
           <p>海拔: {trail.TR_ALT} 公尺</p>
           <p>特色: {trail.TR_SPECIAL}</p>
+          <p>日程: {trail.TR_TOUR}</p>
         </div>
 
         <div className="w-2/6">
           <p>難度：{trail.TR_DIF_CLASS}</p>
           <p>適宜季節：{trail.TR_BEST_SEASON}</p>
         </div>
-        <div className="w-1/6">
-          <p>氣溫: {weatherData[trail.TRAILID].main.temp}度</p>
-          <p>天氣：{weatherData[trail.TRAILID].weather[0].description}</p>
-          <p>天氣：{weatherData[trail.TRAILID].weather[0].main}</p>
-        </div>
+        {weatherData[trail.TRAILID] ? (
+          <div className="w-1/6">
+            <p>氣溫: {weatherData[trail.TRAILID].main.temp}度</p>
+            <p>天氣：{weatherData[trail.TRAILID].weather[0].description}</p>
+            <p>天氣：{weatherData[trail.TRAILID].weather[0].main}</p>
+          </div>
+        ) : (
+          <div>正在載入天氣資料...</div>
+        )}
       </div>
 
       {isInFavList ? (
@@ -107,8 +115,11 @@ function TrailItem({ trail }) {
           </Button>
           {weatherForecastData[trail.TRAILID].list.map((data) => (
             <div key={data.dt} className="w-30 flex">
-              <p>天氣： {data.weather[0].description}</p>
               <p>時間：{data.dt_txt}</p>
+              <p>天氣： {data.weather[0].description}_</p>
+              <p>濕度：{data.main.humidity} ％</p>
+              <p>風速：{data.wind.speed}_m/s_</p>
+              <p>降雨率： {toPercentage(data.pop)} _</p>
             </div>
           ))}
         </div>
