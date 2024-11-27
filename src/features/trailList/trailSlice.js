@@ -29,6 +29,9 @@ const trailSlice = createSlice({
     setSearchPosition(state, action) {
       state.filters.searchPosition = action.payload;
     },
+    setSearchSection(state, action) {
+      state.filters.setSearchSection = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder

@@ -77,11 +77,29 @@ function TrailsSearch() {
   console.log("weatherData", weatherData);
 
   // 篩選資料
+  const regionMap = {
+    北部: ["台北", "新北", "宜蘭", "基隆", "桃園", "新竹"],
+    中部: ["苗栗", "台中", "彰化", "南投", "雲林"],
+    南部: ["高雄", "臺南", "嘉義", "屏東", "澎湖"],
+    東部: ["花蓮", "台東"],
+  };
+
   const filteredTrails = trails.filter((trail) => {
     const nameMatch = trail.TR_CNAME.includes(filters.searchName);
-    const positionMatch = trail.TR_POSITION.includes(filters.searchPosition);
+
+    let positionMatch = true; //預設為 true，代表不篩選位置（適用於 "all"）
+    if (filters.searchPosition !== "全台灣") {
+      const regions = regionMap[filters.searchPosition] || [
+        filters.searchPosition,
+      ];
+      positionMatch = regions.some((region) =>
+        trail.TR_POSITION.includes(region),
+      );
+    }
+
     return nameMatch && positionMatch;
   });
+
   const isSearched = filters.searchName || filters.searchPosition;
 
   // 排序的處理
@@ -115,19 +133,25 @@ function TrailsSearch() {
   console.log("weatherForecastData", weatherForecastData);
   return (
     <>
-      <div className="w-screen bg-[url('https://images.unsplash.com/photo-1705498710905-5e5887e07e58?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-fixed bg-center p-6 md:p-20">
-        <h1 className="mb-4 mt-10 text-center text-2xl font-bold">
-          台灣步道搜尋{" "}
-        </h1>
+      <div
+        className="min-h-screen w-screen bg-[url('https://images.unsplash.com/photo-1705498710905-5e5887e07e58?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-fixed bg-center p-6 py-0 md:px-0 md:py-20"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/public/img/bg1.jpeg')",
+        }}
+      >
         {isLoginModuleVisible && <LoginModule />}
         {/* 搜尋條件 */}
-        <div className="md:center mb-6 rounded-2xl bg-stone-50 bg-opacity-75 p-6 md:mx-auto md:max-w-96">
+        <div className="md:center mb-6 rounded-2xl bg-stone-50 bg-opacity-95 px-8 py-6 md:mx-auto md:max-w-lg">
+          <h1 className="text-green1-400 mb-4 mt-3 text-left text-sm font-bold">
+            搜尋條件{" "}
+          </h1>
           <input
             type="text"
             placeholder="步道名稱"
             value={filters.searchName}
             onChange={(e) => dispatch(setSearchName(e.target.value))}
-            className="mb-2 w-full border p-2"
+            className="border-green1-400 focus:ring-green1-100 mb-2 w-full rounded-full border-2 px-4 py-2 focus:outline-none focus:ring-2"
             disabled={!isLoading}
           />
           <input
@@ -135,20 +159,51 @@ function TrailsSearch() {
             placeholder="依縣市（鄉鎮）尋找"
             value={filters.searchPosition}
             onChange={(e) => dispatch(setSearchPosition(e.target.value))}
-            className="w-full border p-2"
+            className="border-green1-400 focus:ring-green1-100 mb-2 w-full rounded-full border-2 px-4 py-2 focus:outline-none focus:ring-2"
             disabled={!isLoading}
           />
+
+          <Button
+            type="small"
+            onClick={() => dispatch(setSearchPosition("北部"))}
+          >
+            北部
+          </Button>
+          <Button
+            type="small"
+            onClick={() => dispatch(setSearchPosition("中部"))}
+          >
+            中部
+          </Button>
+          <Button
+            type="small"
+            onClick={() => dispatch(setSearchPosition("南部"))}
+          >
+            南部
+          </Button>
+          <Button
+            type="small"
+            onClick={() => dispatch(setSearchPosition("東部"))}
+          >
+            東部
+          </Button>
+          <Button
+            type="small"
+            onClick={() => dispatch(setSearchPosition("全台灣"))}
+          >
+            全台灣
+          </Button>
         </div>
 
         {/* 排序條件選擇 */}
         {isSearched && filteredTrails.length > 0 && (
-          <div className="center mx-auto mb-4 flex max-w-screen-md gap-4">
+          <div className="center mx-auto mb-4 flex max-w-screen-md gap-4 text-stone-50">
             <div>
-              <label className="mr-2">排序依據:</label>
+              <label className="mr-2">排序依據</label>
               <select
                 value={sortOption}
                 onChange={(e) => setSortOption(e.target.value)}
-                className="border p-2"
+                className="text-green1-400 border p-2"
               >
                 <option value="class">難度</option>
                 <option value="length">步道長度</option>
@@ -156,11 +211,11 @@ function TrailsSearch() {
             </div>
 
             <div>
-              <label className="mr-2">排序方式:</label>
+              <label className="mr-2">排序方式</label>
               <select
                 value={sortOrder}
                 onChange={(e) => setSortOrder(e.target.value)}
-                className="border p-2"
+                className="text-green1-400 border p-2"
               >
                 <option value="desc">降序</option>
                 <option value="asc">升序</option>
@@ -171,11 +226,13 @@ function TrailsSearch() {
 
         {/* 渲染篩選結果 */}
         {isSearched && filteredTrails.length > 0 ? (
-          sortedTrails.map((trail) => (
-            <TrailItem trail={trail} key={trail.TRAILID} />
-          ))
+          <div className="rounded-[46px] bg-stone-50 bg-opacity-95 p-5">
+            {sortedTrails.map((trail) => (
+              <TrailItem trail={trail} key={trail.TRAILID} />
+            ))}
+          </div>
         ) : (
-          <div>尚無搜尋結果</div>
+          <div className="m-8 text-center text-stone-50">尚無搜尋結果</div>
         )}
       </div>
     </>

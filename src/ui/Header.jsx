@@ -20,29 +20,40 @@ function Header() {
     (state) => state.favTrail.favTrails.length !== 0,
   );
   return (
-    <header className="z-999 absolute flex w-screen items-center justify-between bg-stone-200 bg-opacity-80 px-4 py-3 uppercase text-stone-600 sm:px-6 md:bg-opacity-0">
-      <Link to="/" className="tracking-widest">
+    <header className="z-999 absolute flex h-8 w-screen items-center justify-between bg-stone-200 bg-opacity-80 px-4 py-7 uppercase text-stone-50 sm:px-6 md:bg-opacity-0">
+      <Link to="/" className="h-8tracking-widest">
         山裡走走
       </Link>
-      <span>
+      <div className="mr-20 flex h-8 w-auto items-center justify-center">
         <Link to="/trails" className="mx-2">
           尋找適合步道
         </Link>
         <Link to="/about" className="mx-2">
           關於網站
         </Link>
+
         {isHaveFavList ? <div>已收藏</div> : <div>未收藏</div>}
+      </div>
+      <div className="absolute right-2 mt-10 flex h-20 w-20 items-center justify-center rounded-full bg-stone-50 hover:transition-all">
         {isAuthenticated ? (
           <>
-            <p>Hi,{user.name}</p>
-            <Button type="small" onClick={() => dispatch(logout())}>
-              登出
-            </Button>
+            <div className="">
+              <div className="flex w-fit">
+                <img className="h-6 w-6 rounded-full" src={user.avatar}></img>
+                <p className="text-green1-500 text-sm">Hi,{user.name}</p>{" "}
+              </div>
+              <Button type="text" onClick={() => dispatch(logout())}>
+                登出
+              </Button>
+            </div>
           </>
         ) : (
-          <Button to="/login">會員登入</Button>
+          <Button type="text" to="/login">
+            登入
+          </Button>
         )}
-      </span>
+      </div>
+
       {/* <SearchOrder /> */}
       {/* <UserName /> */}
     </header>
