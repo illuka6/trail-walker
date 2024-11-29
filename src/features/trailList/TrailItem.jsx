@@ -11,6 +11,7 @@ import { addItem, deleteItem } from "../favList/favTrailSlice";
 import { useState } from "react";
 import Difficulty from "../../ui/Difficulty";
 import TrailWeather from "../../ui/TrailWeather";
+import WeatherForecast from "../../ui/WeatherForecast";
 
 function TrailItem({ trail }) {
   const dispatch = useDispatch();
@@ -37,7 +38,7 @@ function TrailItem({ trail }) {
       ) || false,
   );
   const [isShowMemo, setIsShowMemo] = useState(false);
-  const [isShowForecast, setIsShowForecast] = useState(false);
+
   function handleAddFavList() {
     if (!isAuthenticated) {
       dispatch(showLoginModule());
@@ -151,24 +152,27 @@ function TrailItem({ trail }) {
           <div>正在載入天氣資料...</div>
         )}
       </div>
-
-      <Button type="round" onClick={() => handleForecastWeather()}>
-        查詢未來五日天氣
-      </Button>
+      {/* {isForecastWeatherVisible ? (
+        <Button
+          type="small"
+          onClick={() => {
+            dispatch(hideForecast());
+          }}
+        >
+          隱藏未來天氣
+        </Button>
+      ) : (
+        <Button type="round" onClick={() => handleForecastWeather()}>
+          查詢未來五日天氣
+        </Button>
+      )} */}
       {weatherForecastData[trail.TRAILID] && (
         <div>
           {isForecastWeatherVisible ? (
             <div>
               {" "}
-              <Button
-                type="small"
-                onClick={() => {
-                  dispatch(hideForecast());
-                }}
-              >
-                隱藏未來天氣
-              </Button>
-              {weatherForecastData[trail.TRAILID].list.map((data) => (
+              <WeatherForecast TRAILID={trail.TRAILID}></WeatherForecast>
+              {/* {weatherForecastData[trail.TRAILID].list.map((data) => (
                 <div key={data.dt} className="w-30 flex">
                   <p>時間：{data.dt_txt}</p>
                   <p>天氣： {data.weather[0].description}_</p>
@@ -176,7 +180,7 @@ function TrailItem({ trail }) {
                   <p>風速：{data.wind.speed}_m/s_</p>
                   <p>降雨率： {toPercentage(data.pop)} _</p>
                 </div>
-              ))}
+              ))} */}
             </div>
           ) : (
             ""

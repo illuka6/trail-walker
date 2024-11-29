@@ -9,3 +9,7 @@ export function convertTWD97ToWGS84(x, y) {
   const [lon, lat] = proj4(twd97TM2, wgs84, [x, y]);
   return { lat, lon };
 }
+
+export function toPercentage(value) {
+  return `${(value * 100).toFixed(0)}%`;
+}
