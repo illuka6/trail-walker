@@ -6,7 +6,6 @@ import {
   showForecast,
   hideForecast,
 } from "../../ui/uiSlice";
-import DeleteItem from "../favList/DeleteItem";
 import { addItem, deleteItem } from "../favList/favTrailSlice";
 import { useState } from "react";
 import Difficulty from "../../ui/Difficulty";

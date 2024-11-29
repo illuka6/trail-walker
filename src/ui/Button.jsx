@@ -13,7 +13,7 @@ function Button({ children, disabled, to, type, onClick }) {
     afav: " rounded-full w-10 h-10 border-2 border-green1-400 bg-green1-400 text-sm relative",
     dfav: " rounded-full border-stone-200 border-2  w-10 h-10 text-sm relative ",
     secondary:
-      "text-sm focus:text-green1-500 inline-block  bg-transparent font-semibold uppercase tracking-wide text-stone-50 transition-colors duration-300 hover:bg-stone-300 border-2 border-stone-300 focus:ring hover:text-green1-500 focus:ring-stone-200 focus:ring-offset-2 disabled:cursor-not-allowed  px-4 py-2.5 sm:py-4 md:py-3.5",
+      "text-sm focus:text-green1-500 inline-block  bg-transparent font-semibold uppercase tracking-wide text-stone-50 transition-colors duration-300 hover:bg-stone-300 border-2 border-stone-300 focus:ring hover:text-green1-500 focus:ring-stone-200 focus:ring-offset-2 disabled:cursor-not-allowed  px-10 py-2.5 sm:py-4 md:py-3.5",
     text: "text-green1-500 text-sm w-fit",
   };
 

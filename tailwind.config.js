@@ -14,6 +14,10 @@ export default {
           900: "#35511B",
         },
       },
+      writingMode: {
+        "vertical-rl": "vertical-rl",
+        "vertical-lr": "vertical-lr",
+      },
     },
   },
   plugins: [],

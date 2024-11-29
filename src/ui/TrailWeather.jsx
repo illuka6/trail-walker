@@ -1,6 +1,5 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getWeatherIcon } from "./weatherIcon";
 import { hideForecast, showForecast, showLoginModule } from "./uiSlice";
 import Button from "./Button";
 
