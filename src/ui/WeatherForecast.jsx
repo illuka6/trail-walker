@@ -16,11 +16,11 @@ function WeatherForecast({ TRAILID }) {
               {formatDate(day.date)} {formatDayOfWeek(day.date)}
             </h3>
             <div key={index} className="flex p-2">
-              <div className="day h-30 bg-green1-100 bg-opacity-5 p-2 text-sm">
-                <h4>06:00</h4>
+              <div className="day h-30 bg-green1-100 rounded-l-md bg-opacity-5 p-2 text-sm">
                 {day.morning ? (
                   <>
                     {/* <p>天氣：{day.morning.weather[0].description}</p> */}
+                    <h4>06:00</h4>
                     <img
                       className="h-10 w-10"
                       src={`/img/icon-weather/${day.morning.weather[0].icon}.svg`}
@@ -41,14 +41,14 @@ function WeatherForecast({ TRAILID }) {
                     </div>
                   </>
                 ) : (
-                  <div className="h-24"></div>
+                  <div className=""></div>
                 )}
               </div>
               <div className="night h-30 border-1 bg-green1-900 rounded-r-md bg-opacity-65 p-2 text-sm text-slate-50">
-                <h4>18:00</h4>
                 {day.evening ? (
                   <>
                     {/* <p>天氣：{day.morning.weather[0].description}</p> */}
+                    <h4>18:00</h4>
                     <img
                       className="h-10 w-10"
                       src={`/img/icon-weather/${day.evening.weather[0].icon}.svg`}
@@ -69,7 +69,8 @@ function WeatherForecast({ TRAILID }) {
                     </div>
                   </>
                 ) : (
-                  <p>尚無資料</p>
+                  <div className=""></div>
+                  // <p>尚無資料</p>
                 )}
               </div>
             </div>

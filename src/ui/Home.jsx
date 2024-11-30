@@ -17,27 +17,27 @@ function Home() {
             "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/public/img/bg1.jpeg')",
         }}
       ></div>
-      <div className="h-fit text-xl font-normal text-stone-50 md:absolute md:left-[7vw] md:top-[14vh] md:w-1/2">
-        <div className="writing-mode-vertical-rl h-fit w-12 flex-col justify-center text-start text-8xl leading-[1.15] text-stone-50">
+      <div className="absolute top-[22vh] w-fit text-stone-50 md:left-[8vw] md:top-[14vh] md:h-fit md:w-1/2 md:text-xl md:font-normal">
+        <div className="md:writing-mode-vertical-rl flex h-fit w-screen justify-center text-6xl md:h-fit md:w-12 md:flex-col md:justify-center md:text-start md:text-8xl md:leading-[1.15] md:text-stone-50">
           <p>山</p>
           <p className="text-green1-500">林</p>
           <p>走</p>
           <p>走</p>
         </div>{" "}
       </div>
-      <div className="h-fit text-xl font-normal text-stone-50 md:absolute md:right-0 md:top-[28vh] md:w-1/2">
-        <div className="] ml-[15vh] flex h-fit w-1/5 overflow-hidden align-middle">
-          <div className="writing-mode-vertical-rl h-fit w-6 text-start text-stone-50">
+      <div className="absolute top-[60vh] w-full flex-col items-center justify-center text-sm font-normal text-stone-50 md:right-0 md:top-[28vh] md:h-fit md:w-1/2 md:text-xl">
+        <div className="h-fit w-full items-center justify-center overflow-hidden md:ml-[15vh] md:flex md:w-1/5">
+          <div className="md:writing-mode-vertical-rl h-fit w-full items-center text-center text-stone-50 md:w-6 md:text-start">
             找到最合適的出遊步道
           </div>{" "}
-          <div className="writing-mode-vertical-lr h-fit w-6 pl-3 pt-40 text-start text-stone-50">
+          <div className="md:writing-mode-vertical-lr mt-[2vh] h-fit w-full items-center text-center text-stone-50 md:mt-0 md:w-6 md:pl-3 md:pt-40 md:text-start">
             台灣山林步道搜尋
           </div>{" "}
         </div>{" "}
         {/* {username === "" ? (
         <CreateUser />
       ) : ( */}
-        <div className="h-fit md:w-fit md:pl-[30vw]">
+        <div className="mt-14 flex h-fit justify-center md:mt-0 md:w-fit md:pl-[30vw]">
           <Button to="/trails" type="secondary">
             我要搜尋
           </Button>
