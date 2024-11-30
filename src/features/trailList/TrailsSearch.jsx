@@ -134,7 +134,7 @@ function TrailsSearch() {
   return (
     <>
       <div
-        className="min-h-screen w-screen bg-[url('https://images.unsplash.com/photo-1705498710905-5e5887e07e58?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-fixed bg-center p-6 py-0 md:px-0 md:py-20"
+        className="min-h-screen w-screen bg-[url('https://images.unsplash.com/photo-1705498710905-5e5887e07e58?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-fixed bg-center pb-0 pt-[54px] md:px-0 md:py-20"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/public/img/bg1.jpeg')",
@@ -142,7 +142,7 @@ function TrailsSearch() {
       >
         {isLoginModuleVisible && <LoginModule />}
         {/* 搜尋條件 */}
-        <div className="md:center mb-6 rounded-2xl bg-stone-50 bg-opacity-95 px-8 py-6 md:mx-auto md:max-w-lg">
+        <div className="md:center mb-6 bg-stone-50 bg-opacity-95 px-8 py-6 md:mx-auto md:max-w-lg md:rounded-2xl">
           <h1 className="text-green1-400 mb-4 mt-3 text-left text-sm font-bold">
             搜尋條件{" "}
           </h1>

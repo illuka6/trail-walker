@@ -20,7 +20,7 @@ function Header() {
     (state) => state.favTrail.favTrails.length !== 0,
   );
   return (
-    <header className="z-999 absolute flex h-8 w-screen items-center justify-between bg-stone-200 bg-opacity-80 px-4 py-7 uppercase text-stone-50 sm:px-6 md:bg-opacity-0">
+    <header className="z-999 bg-green1-900 absolute flex h-8 w-screen items-center justify-between bg-opacity-90 px-4 py-7 uppercase text-stone-50 sm:px-6 md:bg-opacity-0">
       <Link to="/" className="h-8tracking-widest">
         山裡走走
       </Link>
