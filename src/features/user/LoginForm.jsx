@@ -11,8 +11,8 @@ function LoginForm() {
   const dispatch = useDispatch();
 
   // PRE-FILL FOR DEV PURPOSES
-  const [email, setEmail] = useState("jack@example.com");
-  const [password, setPassword] = useState("qwerty");
+  const [email, setEmail] = useState("illuka@example.com");
+  const [password, setPassword] = useState("entry");
   // const { login, isAuthenticated } = useAuth();
   const navigate = useNavigate();
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
@@ -31,9 +31,12 @@ function LoginForm() {
   return (
     <div>
       {/* <PageNav /> */}
-      <form className="px-auto pt-20" onSubmit={handleSubmit}>
+      <form
+        className="bg-stone-50 bg-opacity-95 px-2 pb-2 pt-20"
+        onSubmit={handleSubmit}
+      >
         <div className="m-2">
-          <label htmlFor="email">信箱（帳號）</label>
+          <label htmlFor="email">信箱</label>
           <input
             type="email"
             id="email"
@@ -52,7 +55,7 @@ function LoginForm() {
           />
         </div>
 
-        <div>
+        <div className="flex justify-center">
           <Button type="primary">登入</Button>{" "}
         </div>
       </form>

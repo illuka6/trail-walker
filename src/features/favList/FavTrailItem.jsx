@@ -20,9 +20,9 @@ function FavTrailItem({ trail }) {
   //   }
   // }
   return (
-    <div className="center m-auto my-1 max-w-screen-md rounded-md border-b bg-stone-50 bg-opacity-75 p-4">
+    <div className=" center m-auto my-1 max-w-screen-md rounded-md border-b bg-stone-50 bg-opacity-75 p-4">
       <h2 className="font-bold">{trail.TR_CNAME}</h2>
-      <div className="flex">
+      <div className="flex ">
         <div className="w-3/6 grid-flow-col">
           <p>長度: {trail.TR_LENGTH}</p>
           <p>位置: {trail.TR_POSITION}</p>

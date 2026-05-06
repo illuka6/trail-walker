@@ -2,9 +2,9 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const FAKE_USER = {
   userId: 1,
-  name: "Jack",
-  email: "jack@example.com",
-  password: "qwerty",
+  name: "Illuka",
+  email: "illuka@example.com",
+  password: "entry",
   avatar: "https://i.pravatar.cc/100?u=zz",
 };
 const initialState = {

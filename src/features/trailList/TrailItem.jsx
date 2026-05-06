@@ -67,13 +67,13 @@ function TrailItem({ trail }) {
   return (
     <div className="center m-auto my-1 max-w-screen-md rounded-md border-b bg-stone-50 bg-opacity-75 p-4">
       <div className="flex min-w-full items-center justify-between border-b-2">
-        <h2 className="text-green1-600 p-3 font-extrabold md:text-lg">
+        <h2 className="p-3 font-extrabold text-green1-600 md:text-lg">
           {trail.TR_CNAME}
         </h2>
         <div className="flex items-center">
           <div className="mr-1 flex w-48 items-baseline md:mr-20">
             {" "}
-            <p className="text-green1-500 mr-2 text-sm">難度</p>
+            <p className="mr-2 text-sm text-green1-500">難度</p>
             <Difficulty trail={trail} />
             {/* <p className="text-green1-500">{trail.TR_DIF_CLASS}</p> */}
           </div>
@@ -104,7 +104,7 @@ function TrailItem({ trail }) {
               alt="length-icon"
               className="mx-1 h-6 w-6"
             />
-            <p>位置 {trail.TR_POSITION} </p>
+            <p>位置： {trail.TR_POSITION} </p>
           </div>
           <div className="my-1 flex items-center py-1">
             <img
@@ -112,7 +112,7 @@ function TrailItem({ trail }) {
               alt="length-icon"
               className="m-1 h-6 w-6 p-[2px]"
             />
-            <p>長度 {trail.TR_LENGTH} </p>
+            <p>長度： {trail.TR_LENGTH} </p>
           </div>
 
           <div className="my-1 flex items-center">
@@ -121,7 +121,7 @@ function TrailItem({ trail }) {
               alt="length-icon"
               className="m-1 h-6 w-6"
             />
-            <p>海拔 {trail.TR_ALT}公尺 </p>
+            <p>海拔： {trail.TR_ALT}公尺 </p>
           </div>
           <div className="my-1 flex items-center">
             <img
@@ -129,7 +129,7 @@ function TrailItem({ trail }) {
               alt="length-icon"
               className="m-1 h-6 w-6"
             />
-            <p>日程 {trail.TR_TOUR} </p>
+            <p>日程： {trail.TR_TOUR} </p>
           </div>
           <div className="my-1 flex items-center">
             <img
@@ -186,7 +186,7 @@ function TrailItem({ trail }) {
           )}{" "}
         </div>
       )}
-      {isAuthenticated ? (
+      {/* {isAuthenticated ? (
         <Button onClick={() => setIsShowMemo(!isShowMemo)} type="text">
           {" "}
           備註🔽{" "}
@@ -200,7 +200,7 @@ function TrailItem({ trail }) {
         </div>
       ) : (
         ""
-      )}
+      )} */}
     </div>
   );
 }

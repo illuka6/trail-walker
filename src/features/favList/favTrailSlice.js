@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   favTrails: [
-    { TRAILID: 1234, TR_ALT: 100 },
-    { TRAILID: 2345, TR_ALT: 200 },
+    { TRAILID: 12345, TR_ALT: 100 },
+    { TRAILID: 23456, TR_ALT: 200 },
   ],
 };
 

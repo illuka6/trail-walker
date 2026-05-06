@@ -20,7 +20,7 @@ function Header() {
     (state) => state.favTrail.favTrails.length !== 0,
   );
   return (
-    <header className="z-999 bg-green1-900 absolute flex h-8 w-screen items-center justify-between bg-opacity-90 px-4 py-7 uppercase text-stone-50 sm:px-6 md:bg-opacity-0">
+    <header className="z-999 absolute flex h-8 w-screen items-center justify-between bg-green1-900 bg-opacity-90 px-4 py-7 uppercase text-stone-50 sm:px-6 md:bg-opacity-0">
       <Link to="/" className="h-8tracking-widest">
         山裡走走
       </Link>
@@ -28,11 +28,13 @@ function Header() {
         <Link to="/trails" className="mx-2">
           尋找適合步道
         </Link>
-        <Link to="/about" className="mx-2">
-          關於網站
-        </Link>
-
-        {isHaveFavList ? <div>已收藏</div> : <div>未收藏</div>}
+        {isHaveFavList ? (
+          <Link to="/about" className="mx-2">
+            收藏清單
+          </Link>
+        ) : (
+          <div></div>
+        )}
       </div>
       <div className="absolute right-2 mt-10 flex h-20 w-20 items-center justify-center rounded-full bg-stone-50 hover:transition-all">
         {isAuthenticated ? (
@@ -40,7 +42,7 @@ function Header() {
             <div className="">
               <div className="flex w-fit">
                 <img className="h-6 w-6 rounded-full" src={user.avatar}></img>
-                <p className="text-green1-500 text-sm">Hi,{user.name}</p>{" "}
+                <p className="text-sm text-green1-500">Hi,{user.name}</p>{" "}
               </div>
               <Button type="text" onClick={() => dispatch(logout())}>
                 登出
