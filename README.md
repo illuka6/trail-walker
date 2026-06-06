@@ -85,25 +85,56 @@
 
 ---
 
-## 🏗 系統架構
+## 🚧 技術挑戰與解法
 
-<!-- HERO SECTION -->
-# 🌿 Trail Walker
+### 🔹 多 API 整合問題
+**問題：** 資料來源不同
+
+**解法：**
+- Redux 分離 trail / weather state
+- UI 層做資料整合
+
+---
+
+### 🔹 狀態管理複雜
+**問題：** API + UI state 容易混亂
+
+**解法：**
+- Redux Toolkit slice 拆分
+- 清楚分層管理
+
+---
+
+### 🔹 UX 決策負擔
+**問題：** 使用者需自己判斷天氣
+
+**解法：**
+- 將天氣資訊直接嵌入步道卡片
+- 減少額外查詢
+## 🖥 專案預覽
 
 <p align="center">
-  <b>一個結合台灣步道資料與即時天氣資訊的決策輔助工具</b><br/>
-  幫助使用者快速判斷「今天適不適合去爬哪一條步道」
+  <img src="./screenshots/preview.gif" width="80%" />
 </p>
+
+---
+
+## 🌍 線上展示
 
 <p align="center">
   <a href="https://trail-walker-illuka-s-projects.vercel.app">
-    🔗 Live Demo
+    👉 前往 Live Demo
   </a>
 </p>
 
+---
 
-🖥 Preview
-![Trail Walker Demo](./screenshots/preview.gif)
-🌍 Live Demo
+## 🔮 未來優化方向
 
-👉 https://trail-walker-illuka-s-projects.vercel.app
+- 🗺 地圖整合（Mapbox / Google Maps）
+- ❤️ 收藏步道功能
+- 🧠 天氣導向推薦系統
+- 📡 PWA 離線支援
+- ⚡ 後端快取 API
+
+---
