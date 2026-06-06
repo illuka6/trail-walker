@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <a href="https://trail-walker-illuka-s-projects.vercel.app">
+  <a href="https://trail-walker.vercel.app/">
     🔗 Live Demo
   </a>
 </p>
@@ -122,7 +122,7 @@
 ## 🌍 線上展示
 
 <p align="center">
-  <a href="https://trail-walker-illuka-s-projects.vercel.app">
+  <a href="https://trail-walker.vercel.app/">
     👉 前往 Live Demo
   </a>
 </p>
