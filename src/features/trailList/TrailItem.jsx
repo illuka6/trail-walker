@@ -81,7 +81,7 @@ function TrailItem({ trail }) {
             <Button type="dfav" onClick={() => handleDeleteFavList()}>
               <img
                 className="absolute left-2 top-2.5 h-5 w-5"
-                src="/public/img/icon/heart-pink.svg"
+                src="/img/icon/heart-pink.svg"
                 alt=""
               />
             </Button>
@@ -89,7 +89,7 @@ function TrailItem({ trail }) {
             <Button type="afav" onClick={() => handleAddFavList()}>
               <img
                 className="absolute left-2 top-2.5 h-5 w-5"
-                src="/public/img/icon/heart-white.svg"
+                src="/img/icon/heart-white.svg"
                 alt=""
               />
             </Button>
@@ -100,7 +100,7 @@ function TrailItem({ trail }) {
         <div className="w-3/6 grid-flow-col">
           <div className="my-1 flex items-center">
             <img
-              src="/public/img/icon/"
+              src="/img/icon/"
               alt="length-icon"
               className="mx-1 h-6 w-6"
             />
@@ -108,7 +108,7 @@ function TrailItem({ trail }) {
           </div>
           <div className="my-1 flex items-center py-1">
             <img
-              src="/public/img/icon/travel.png"
+              src="/img/icon/travel.png"
               alt="length-icon"
               className="m-1 h-6 w-6 p-[2px]"
             />
@@ -117,7 +117,7 @@ function TrailItem({ trail }) {
 
           <div className="my-1 flex items-center">
             <img
-              src="/public/img/icon/altitude.png"
+              src="/img/icon/altitude.png"
               alt="length-icon"
               className="m-1 h-6 w-6"
             />
@@ -125,7 +125,7 @@ function TrailItem({ trail }) {
           </div>
           <div className="my-1 flex items-center">
             <img
-              src="/public/img/icon/hiker.png"
+              src="/img/icon/hiker.png"
               alt="length-icon"
               className="m-1 h-6 w-6"
             />
@@ -133,14 +133,14 @@ function TrailItem({ trail }) {
           </div>
           <div className="my-1 flex items-center">
             <img
-              src="/public/img/icon/hiker.png"
+              src="/img/icon/hiker.png"
               alt="length-icon"
               className="m-1 h-6 w-6"
             />
             <p>適宜季節：{trail.TR_BEST_SEASON}</p>
           </div>
           {/* <div className="my-1 flex items-center">
-            <img src="/public/img/" alt="length-icon" className="m-1 h-6 w-6" />
+            <img src="/img/" alt="length-icon" className="m-1 h-6 w-6" />
             <p>特色 {trail.TR_SPECIAL} </p>
           </div> */}
         </div>

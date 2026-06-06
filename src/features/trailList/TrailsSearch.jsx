@@ -137,7 +137,7 @@ function TrailsSearch() {
         className="min-h-screen w-screen bg-[url('https://images.unsplash.com/photo-1705498710905-5e5887e07e58?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-fixed bg-center pb-0 pt-[54px] md:px-0 md:py-20"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/public/img/bg1.jpeg')",
+            "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/img/bg1.jpeg')",
         }}
       >
         {isLoginModuleVisible && <LoginModule />}
