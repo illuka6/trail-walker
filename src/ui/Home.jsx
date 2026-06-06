@@ -14,7 +14,7 @@ function Home() {
         className="last:100 h-screen w-screen bg-[url()] bg-cover bg-center px-4 py-10 text-center"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/public/img/bg1.jpeg')",
+            "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/img/bg1.jpeg')",
         }}
       ></div>
       <div className="absolute top-[22vh] w-fit text-stone-50 md:left-[8vw] md:top-[14vh] md:h-fit md:w-1/2 md:text-xl md:font-normal">
