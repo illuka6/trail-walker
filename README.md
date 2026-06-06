@@ -24,3 +24,7 @@ git clone https://github.com/username/trail-walker.git
 cd trail-walker
 npm install
 npm run dev
+
+##demo
+
+trail-walker-illuka-s-projects.vercel.app
