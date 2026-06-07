@@ -65,7 +65,7 @@ function TrailItem({ trail }) {
   }
 
   return (
-    <div className="center m-auto my-1 max-w-screen-md rounded-md border-b bg-stone-50 bg-opacity-75 p-4">
+    <div className="center m-auto mt-1 max-w-screen-md rounded-md border-b bg-stone-50 bg-opacity-75 p-4">
       <div className="flex min-w-full items-center justify-between border-b-2">
         <h2 className="p-3 font-extrabold text-green1-600 md:text-lg">
           {trail.TR_CNAME}
@@ -100,7 +100,7 @@ function TrailItem({ trail }) {
         <div className="w-3/6 grid-flow-col">
           <div className="my-1 flex items-center">
             <img
-              src="/img/icon/"
+              src="/img/icon/map-pin-fill.png"
               alt="length-icon"
               className="mx-1 h-6 w-6"
             />
@@ -140,7 +140,7 @@ function TrailItem({ trail }) {
             <p>適宜季節：{trail.TR_BEST_SEASON}</p>
           </div>
           {/* <div className="my-1 flex items-center">
-            <img src="/img/" alt="length-icon" className="m-1 h-6 w-6" />
+            <img src="/public/img/" alt="length-icon" className="m-1 h-6 w-6" />
             <p>特色 {trail.TR_SPECIAL} </p>
           </div> */}
         </div>

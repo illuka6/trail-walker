@@ -10,7 +10,6 @@ function DeleteItem({ TRAILID }) {
         dispatch(deleteItem(TRAILID));
         console.log("TRAILID", TRAILID);
       }}
-      c
     >
       移除收藏
     </Button>

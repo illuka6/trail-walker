@@ -79,10 +79,10 @@ function TrailsSearch() {
 
   // 篩選資料
   const regionMap = {
-    北部: ["台北", "新北", "宜蘭", "基隆", "桃園", "新竹"],
-    中部: ["苗栗", "台中", "彰化", "南投", "雲林"],
+    北部: ["臺北", "新北", "宜蘭", "基隆", "桃園", "新竹"],
+    中部: ["苗栗", "臺中", "彰化", "南投", "雲林"],
     南部: ["高雄", "臺南", "嘉義", "屏東", "澎湖"],
-    東部: ["花蓮", "台東"],
+    東部: ["花蓮", "臺東"],
   };
 
   const filteredTrails = trails.filter((trail) => {
@@ -198,8 +198,8 @@ function TrailsSearch() {
 
         {/* 排序條件選擇 */}
         {isSearched && filteredTrails.length > 0 && (
-          <div className="center mx-auto mb-4 flex max-w-screen-md gap-4 text-stone-50">
-            <div>
+          <div className=" mx-auto mb-4 flex max-w-screen-md gap-4 text-stone-50  pl-4 md:pl-0 ">
+            <div className="">
               <label className="mr-2">排序依據</label>
               <select
                 value={sortOption}
@@ -227,7 +227,7 @@ function TrailsSearch() {
 
         {/* 渲染篩選結果 */}
         {isSearched && filteredTrails.length > 0 ? (
-          <div className="rounded-[46px] bg-stone-50 bg-opacity-95 p-5">
+          <div className="rounded-t-[46px] bg-stone-50 bg-opacity-95 p-5">
             {sortedTrails.map((trail) => (
               <TrailItem trail={trail} key={trail.TRAILID} />
             ))}

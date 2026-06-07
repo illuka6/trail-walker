@@ -23,7 +23,8 @@ function FavTrailItem({ trail }) {
 
 
   return (
-    <div className=" center m-auto my-1 max-w-screen-md rounded-md border-b bg-stone-50 bg-opacity-75 p-4">
+    
+    <div className=" center m-auto my-1 max-w-screen-md rounded-md border-b bg-stone-50 bg-opacity-95 p-4">
       <h2 className="font-bold">{trail.TR_CNAME}</h2>
       <div className="flex ">
         <div className="w-3/6 grid-flow-col">
@@ -47,7 +48,7 @@ function FavTrailItem({ trail }) {
         加入收藏
       </Button> */}
 
-      <Button type="primary">查詢天氣</Button>
+      {/* <Button type="primary">查詢天氣</Button> */}
       <DeleteItem TRAILID={trail.TRAILID} />
       {console.log("trail.TRAILID", trail.TRAILID)}
     </div>

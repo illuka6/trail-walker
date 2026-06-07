@@ -5,7 +5,8 @@ const FAKE_USER = {
   name: "Illuka",
   email: "illuka@example.com",
   password: "entry",
-  avatar: "https://i.pravatar.cc/100?u=zz",
+  avatar: "https://i.pravatar.cc/150?img=61",
+  // avatar: "https://i.pravatar.cc/100?u=zz", 
 };
 const initialState = {
   user: null,

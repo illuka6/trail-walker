@@ -15,6 +15,7 @@ function Button({ children, disabled, to, type, onClick }) {
     secondary:
       "text-sm focus:text-green1-500 inline-block  bg-transparent font-semibold uppercase tracking-wide text-stone-50 transition-colors duration-300 hover:bg-stone-300 border-2 border-stone-300 focus:ring hover:text-green1-500 focus:ring-stone-200 focus:ring-offset-2 disabled:cursor-not-allowed  px-10 py-2.5 sm:py-4 md:py-3.5",
     text: "text-green1-500 text-sm w-fit",
+    logout: "text-green1-500 text-[10px] w-fit",
   };
 
   if (to)

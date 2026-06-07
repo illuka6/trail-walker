@@ -31,17 +31,33 @@ console.log("trails sample:", trails[0]);
 console.log("trails", trails);
 console.log("favTrailData", favTrailData);
 
-  return ( favTrailData?.length>0 ?
-    <ul className="divide-y divide-stone-200 px-2">
+  return ( favTrailData?.length>0 ? <>
+    <div
+        className="min-h-screen w-screen bg-[url('https://images.unsplash.com/photo-1705498710905-5e5887e07e58?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-fixed bg-center pb-0 pt-[54px] md:px-0 md:py-20"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/img/bg1.jpeg')",
+        }}
+      >
+        <div className=" center m-auto my-1 max-w-screen-md rounded-md border-b bg-stone-50 bg-opacity-75 p-4">
+          
+    <ul className=" divide-y divide-stone-200  ">
       {favTrailData.map((trail) => (
         <FavTrailItem
           trail={trail}
           key={trail.TRAILID}
         />
       ))}
-    </ul> :  (
-    <div className="align-middle  mt-20 p-6"><Link to="/trails">無收藏步道，
-  去添加 →</Link></div>
+    </ul>
+    </div> </div></>:  (<div
+        className="min-h-screen w-screen bg-[url('https://images.unsplash.com/photo-1705498710905-5e5887e07e58?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-fixed bg-center pb-0 pt-[54px] md:px-0 md:py-20"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/img/bg1.jpeg')",
+        }}
+      >
+    <div className="align-middle  mt-20 p-6"><Link to="/trails" className="text-white">無收藏步道，
+  去添加 →</Link></div></div>
 
   )
   );
