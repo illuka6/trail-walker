@@ -19,7 +19,8 @@ function TrailsSearch() {
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
 
   // const trails = useSelector((state) => state.trail.trails);
-  const trails = useLoaderData();
+  // const trails = useLoaderData();
+  const trails = useSelector(state => state.trail.trails);
   const { weatherData, weatherForecastData } = useSelector(
     (state) => state.trail,
   );
@@ -152,7 +153,7 @@ function TrailsSearch() {
             value={filters.searchName}
             onChange={(e) => dispatch(setSearchName(e.target.value))}
             className="border-green1-400 focus:ring-green1-100 mb-2 w-full rounded-full border-2 px-4 py-2 focus:outline-none focus:ring-2"
-            disabled={!isLoading}
+            
           />
           <input
             type="text"
@@ -160,7 +161,7 @@ function TrailsSearch() {
             value={filters.searchPosition}
             onChange={(e) => dispatch(setSearchPosition(e.target.value))}
             className="border-green1-400 focus:ring-green1-100 mb-2 w-full rounded-full border-2 px-4 py-2 focus:outline-none focus:ring-2"
-            disabled={!isLoading}
+            
           />
 
           <Button

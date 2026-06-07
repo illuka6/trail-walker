@@ -12,7 +12,7 @@ const favTrailSlice = createSlice({
   initialState,
   reducers: {
     addItem(state, action) {
-      // payload = newItem
+      // payload = trailId
       state.favTrails.push(action.payload);
     },
     deleteItem(state, action) {

@@ -10,8 +10,17 @@ import Login from "./features/user/Login";
 import TrailsSearch from "./features/trailList/TrailsSearch";
 import LoginModule from "./ui/LoginModule";
 import FavTrailList from "./features/favList/FavTrailList";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { fetchTrails } from "./features/trailList/trailSlice";
 // import { action as updateOrderAction } from "./features/order/UpdateOrder";
 function App() {
+
+   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchTrails());
+  }, [dispatch]);
   const router = createBrowserRouter([
     {
       element: <AppLayout />,
@@ -24,7 +33,7 @@ function App() {
         {
           path: "/trails",
           element: <TrailsSearch />,
-          loader: trailsLoader,
+          // loader: trailsLoader, 拖慢速度
           errorElement: <Error />,
         },
         {
@@ -34,9 +43,10 @@ function App() {
           // action: createUserAction,
         },
         {
-          path: "/about",
+          path: "/favList",
           // element: <CreateOrder />,
           element: <FavTrailList />,
+          // loader: trailsLoader, 拖慢速度
           // action: createUserAction,
         },
         {

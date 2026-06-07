@@ -32,12 +32,14 @@ function LoginForm() {
     <div>
       {/* <PageNav /> */}
       <form
-        className="bg-stone-50 bg-opacity-95 px-2 pb-2 pt-20"
+        className="bg-stone-50 bg-opacity-95 px-2 pb-2 pt-5"
         onSubmit={handleSubmit}
       >
-        <div className="m-2">
-          <label htmlFor="email">信箱</label>
+        <div className="m-4">
+          <label htmlFor="email" className="pr-4">信箱</label>
           <input
+          className="p-2"
+          
             type="email"
             id="email"
             onChange={(e) => setEmail(e.target.value)}
@@ -45,9 +47,10 @@ function LoginForm() {
           />
         </div>
 
-        <div className="m-2">
-          <label htmlFor="password">密碼</label>
+        <div className="m-4">
+          <label htmlFor="password" className="pr-4">密碼</label>
           <input
+          className="p-2"
             type="password"
             id="password"
             onChange={(e) => setPassword(e.target.value)}

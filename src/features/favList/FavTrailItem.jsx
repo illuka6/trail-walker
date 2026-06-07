@@ -19,6 +19,9 @@ function FavTrailItem({ trail }) {
   //     alert("收藏成功！");
   //   }
   // }
+
+
+
   return (
     <div className=" center m-auto my-1 max-w-screen-md rounded-md border-b bg-stone-50 bg-opacity-75 p-4">
       <h2 className="font-bold">{trail.TR_CNAME}</h2>
@@ -40,9 +43,9 @@ function FavTrailItem({ trail }) {
         </div> */}
       </div>
 
-      <Button type="primary" onClick={() => handleAddFavList()}>
+      {/* <Button type="primary" onClick={() => handleAddFavList()}>
         加入收藏
-      </Button>
+      </Button> */}
 
       <Button type="primary">查詢天氣</Button>
       <DeleteItem TRAILID={trail.TRAILID} />

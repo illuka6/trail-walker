@@ -29,7 +29,7 @@ function Header() {
           尋找適合步道
         </Link>
         {isHaveFavList ? (
-          <Link to="/about" className="mx-2">
+          <Link to="/favList" className="mx-2">
             收藏清單
           </Link>
         ) : (

@@ -12,7 +12,7 @@ function DeleteItem({ TRAILID }) {
       }}
       c
     >
-      Delete
+      移除收藏
     </Button>
   );
 }

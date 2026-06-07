@@ -5,6 +5,8 @@ function AppLayout() {
   const navigation = useNavigation();
   console.log("navigation: ", navigation);
   const isLoading = navigation.state === "loading";
+
+  
   return (
     <div className="relative grid h-screen grid-rows-[auto_1fr_auto]">
       {isLoading && <Loader />}
