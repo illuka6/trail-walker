@@ -129,7 +129,7 @@
 
 <p align="center">
   <img src="./screenshots/home.png" width="40%" />
-  <img src="./screenshots/home-md.png" width="40%" />
+  <img src="./screenshots/home-md.png" width="20%" />
 </p>
 
 ---
