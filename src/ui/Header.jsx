@@ -27,11 +27,11 @@ function Header({ scrolled }) {
   z-50 fixed top-0 left-0 w-screen
   flex h-8 items-center justify-between
   px-4 py-7 uppercase text-stone-50
-  transition-all duration-300
+  transition-all duration-300 
 
   ${scrolled
     ? "bg-green1-600 shadow-lg"
-    : "bg-transparent bg-opacity-80 md:bg-opacity-0"}
+    : "bg-green1-600 md:bg-transparent"}
 `}>
       <Link to="/" className="h-8tracking-widest">
         山裡走走
