@@ -30,7 +30,7 @@ function Header({ scrolled }) {
   transition-all duration-300
 
   ${scrolled
-    ? "bg-green1-400 shadow-lg"
+    ? "bg-green1-600 shadow-lg"
     : "bg-transparent bg-opacity-80 md:bg-opacity-0"}
 `}>
       <Link to="/" className="h-8tracking-widest">

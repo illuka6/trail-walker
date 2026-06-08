@@ -1,5 +1,5 @@
-
 <!-- HERO SECTION -->
+
 # 🌿 Trail Walker
 
 <p align="center">
@@ -37,6 +37,7 @@
 👉 這些資訊通常分散在不同網站
 
 ### ✨ 本專案解決的問題
+
 將「步道 + 天氣」整合在同一個畫面，降低決策成本。
 
 ---
@@ -54,19 +55,23 @@
 ## ⚙️ 主要功能
 
 ### 🏞 步道探索
+
 - 串接台灣步道資料 API
 - 支援篩選與列表瀏覽
 - 卡片式資訊呈現
 
 ### 🌦 即時天氣整合
+
 - OpenWeatherMap API 串接
 - 每條步道顯示對應天氣資訊
 
 ### 🎯 決策輔助 UI
+
 - 步道 + 天氣整合顯示
 - 降低查詢切換成本
 
 ### 📱 響應式設計
+
 - 支援 平板 / 桌機
 
 ---
@@ -74,12 +79,14 @@
 ## 🧩 技術棧
 
 **Frontend**
+
 - React (Vite)
 - Redux Toolkit
 - Axios
 - Tailwind CSS
 
 **API**
+
 - Taiwan Trail Data API
 - OpenWeatherMap API
 
@@ -88,33 +95,41 @@
 ## 🚧 技術挑戰與解法
 
 ### 🔹 多 API 整合問題
+
 **問題：** 資料來源不同
 
 **解法：**
+
 - Redux 分離 trail / weather state
 - UI 層做資料整合
 
 ---
 
 ### 🔹 狀態管理複雜
+
 **問題：** API + UI state 容易混亂
 
 **解法：**
+
 - Redux Toolkit slice 拆分
 - 清楚分層管理
 
 ---
 
 ### 🔹 UX 決策負擔
+
 **問題：** 使用者需自己判斷天氣
 
 **解法：**
+
 - 將天氣資訊直接嵌入步道卡片
 - 減少額外查詢
+
 ## 🖥 專案預覽
 
 <p align="center">
-  <img src="./screenshots/preview.gif" width="80%" />
+  <img src="./screenshots/home.png" width="80%" />
+  <img src="./screenshots/home-md.png" width="80%" />
 </p>
 
 ---
