@@ -128,8 +128,8 @@
 ## 🖥 專案預覽
 
 <p align="center">
-  <img src="./screenshots/home.png" width="80%" />
-  <img src="./screenshots/home-md.png" width="80%" />
+  <img src="./screenshots/home.png" width="40%" />
+  <img src="./screenshots/home-md.png" width="40%" />
 </p>
 
 ---
