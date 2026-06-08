@@ -22,11 +22,11 @@ function LoginModule() {
           onClick={(e) => e.stopPropagation()} // 阻止點擊登入框關閉
         >
           <div className="absolute right-4">
-            <Button type="small" onClick={() => onClose()}>
-              X
+            <Button type="round" onClick={() => onClose()}>
+              x
             </Button>
           </div>
-          <h2 className="mb-4 text-xl font-bold">登入</h2>
+          <h2 className=" mb-4 text-xl font-bold">登入</h2>
           <LoginForm />
         </div>
       </div>
