@@ -21,20 +21,14 @@ function Header({ scrolled }) {
     (state) => state.favTrail.favTrails.length !== 0,
   );
 
-
   return (
-    <header className={`
-  z-50 fixed top-0 left-0 w-screen
-  flex h-8 items-center justify-between
-  px-4 py-7 uppercase text-stone-50
-  transition-all duration-300 
-
-  ${scrolled
-    ? "bg-green1-600 shadow-lg"
-    : "bg-green1-600 md:bg-transparent"}
-`}>
+    <header
+      className={`fixed left-0 top-0 z-50 flex h-8 w-screen items-center justify-between px-4 py-7 uppercase text-stone-50 transition-all duration-300 ${
+        scrolled ? "bg-green1-600 shadow-lg" : "bg-green1-600 md:bg-transparent"
+      } `}
+    >
       <Link to="/" className="h-8tracking-widest">
-        山裡走走
+        山林走走
       </Link>
       <div className="mr-20 flex h-8 w-auto items-center justify-center">
         <Link to="/trails" className="mx-2">
@@ -52,11 +46,11 @@ function Header({ scrolled }) {
         {isAuthenticated ? (
           <>
             <div className="flex flex-col items-center">
-              <div className="  flex flex-col items-center w-fit">
+              <div className="flex w-fit flex-col items-center">
                 <img className="h-6 w-6 rounded-full" src={user.avatar}></img>
                 <p className="text-sm text-green1-500">{user.name}</p>{" "}
               </div>
-              <Button type="logout" onClick={() => dispatch(logout()) }>
+              <Button type="logout" onClick={() => dispatch(logout())}>
                 登出
               </Button>
             </div>
