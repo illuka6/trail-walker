@@ -81,8 +81,9 @@
 **Frontend**
 
 - React (Vite)
+- React Router
 - Redux Toolkit
-- Axios
+- Fetch API
 - Tailwind CSS
 
 **API**
@@ -100,7 +101,7 @@
 
 **解法：**
 
-- Redux 分離 trail / weather state
+- Redux 分離 trail / user
 - UI 層做資料整合
 
 ---
